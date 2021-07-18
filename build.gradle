@@ -15,6 +15,7 @@ repositories {
 }
 
 micronaut {
+    runtime "netty"
     testRuntime("junit5")
     processing {
         incremental(true)
@@ -32,9 +33,14 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
 
+    // xml
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    // testes
     testImplementation("io.micronaut:micronaut-http-client")
+
+    // healthcheck
+    implementation("io.micronaut:micronaut-management")
 
 }
 

@@ -1,3 +1,19 @@
 micronaut:
   application:
     name: fretes
+
+grpc:
+  server:
+    health:
+      enabled: true # default, mas só para deixar explicito
+
+# monitoramento e metricas
+# hhtps://docs.micronaut.io/latest/guide/index.html#providedEndpoints
+endpoints:
+  all:
+    #port: 8085 # porta padrao ou assume outra
+    sensitive: false
+  health:
+    enabled: true
+    sensitive: false # autorizacao
+    details-visible: ANONYMOUS
