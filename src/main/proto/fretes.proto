@@ -5,12 +5,20 @@ option java_package = "br.ccom.zup.edu";
 option java_outer_classname = "Fretes";
 option objc_class_prefix = "HLW";
 
+import "google/protobuf/any.proto";
+
 package br.ccom.zup.edu;
 
 service FretesService {
   rpc send (FretesRequest) returns (FretesReply) {}
 
   rpc calculaFrete(CalculoFreteRequest) returns (CalculoFreteResponse) {}
+}
+
+message ErrorDetails {
+  int32 code = 1;
+  string message =2;
+  repeated google.protobuf.Any details = 3;
 }
 
 message CalculoFreteRequest {
