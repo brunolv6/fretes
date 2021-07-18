@@ -9,6 +9,17 @@ package br.ccom.zup.edu;
 
 service FretesService {
   rpc send (FretesRequest) returns (FretesReply) {}
+
+  rpc calculaFrete(CalculoFreteRequest) returns (CalculoFreteResponse) {}
+}
+
+message CalculoFreteRequest {
+  string cep = 1;
+}
+
+message CalculoFreteResponse {
+  string cep = 1;
+  double valor = 2;
 }
 
 message FretesRequest {
